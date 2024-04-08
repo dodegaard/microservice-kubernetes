@@ -1,8 +1,4 @@
-#!/bin/sh
-if [ -z "$DOCKER_ACCOUNT" ]; then
-    DOCKER_ACCOUNT=ewolff
-fi;
-kubectl create deployment apache -n opentelemetry --image=docker.io/$DOCKER_ACCOUNT/microservice-kubernetes-demo-apache:latest --port=80
+kubectl rollout status deployment apache -n opentelemetry --image=docker.io/$DOCKER_ACCOUNT/microservice-kubernetes-demo-apache:latest --port=80
 kubectl expose deployment apache -n opentelemetry --type="LoadBalancer" --port 80
 kubectl create deployment catalog -n opentelemetry --image=docker.io/$DOCKER_ACCOUNT/microservice-kubernetes-demo-catalog:latest --port=8080
 kubectl expose deployment catalog -n opentelemetry --type="LoadBalancer" --port 8080
