@@ -16,6 +16,8 @@ spec:
       creationTimestamp: null
       labels:
         run: apache
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: "true"
     spec:
       containers:
       - image: docker.io/ewolff/microservice-kubernetes-demo-apache:latest
@@ -45,6 +47,8 @@ spec:
       creationTimestamp: null
       labels:
         run: catalog
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: "true"
     spec:
       containers:
       - image: docker.io/ewolff/microservice-kubernetes-demo-catalog:latest
@@ -74,6 +78,8 @@ spec:
       creationTimestamp: null
       labels:
         run: customer
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: "true"
     spec:
       containers:
       - image: docker.io/ewolff/microservice-kubernetes-demo-customer:latest
@@ -103,6 +109,8 @@ spec:
       creationTimestamp: null
       labels:
         run: order
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: "true"
     spec:
       containers:
       - image: docker.io/ewolff/microservice-kubernetes-demo-order:latest
